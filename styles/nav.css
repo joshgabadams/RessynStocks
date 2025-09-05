@@ -1,0 +1,152 @@
+
+.site-header {
+  height: auto;
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Flex ratios: logo = 1, nav = 2, button = 1 */
+.logo-div {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  min-width: 120px;
+}
+
+.logo-img {
+  height: 70px;
+  width: auto;
+}
+
+/* Nav area */
+.nav-links {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  min-width: 200px;
+}
+
+.nav-links a {
+  font-size: 18px;
+  text-decoration: none;
+  color: #000000;
+  transition: color 0.3s;
+  white-space: nowrap;
+}
+/* ===== NAV LINK HOVER ===== */
+.nav-links a:hover {
+  color: #DE3426;
+  font-weight: bold;
+  text-decoration: underline;
+  text-decoration-color: #DE3426;
+  text-underline-offset: 4px; /* spacing between text and underline */
+}
+
+/* ===== DROPDOWN BASE ===== */
+/* Dropdown Base */
+.dropdown {
+  position: absolute;
+  top: 100px; /* adjust under header */
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  padding: 20px;
+  border-radius: 10px;
+  background: linear-gradient(to bottom, rgb(203, 53, 53), rgb(35, 35, 97));
+  color: #fff;
+  z-index: 1001;
+  min-width: 250px;
+  text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Clean outer shadow */
+
+
+  /* Animation */
+  opacity: 0;
+  pointer-events: none; /* prevents interaction when hidden */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Blur background inside dropdown */
+.dropdown::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(8px);
+  border-radius: 10px;
+  z-index: -1;
+}
+
+/* Visible State */
+.dropdown.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  pointer-events: auto;
+  
+}
+
+
+.dropdown-item {
+  flex: 1; /* each item takes equal space */
+  min-width: 0; /* prevents overflow */
+}
+
+.dropdown-item img {
+          width: 100%; 
+            max-width: 15rem;  
+          border-radius: 5%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Clean outer shadow */
+}
+
+
+
+
+.dropdown button {
+  background-color: transparent;
+  border: 1px solid rgb(255, 255, 255);
+  color: white;
+  margin: 8px;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+ol {
+  list-style-type: none;   /* removes the numbers */
+  padding: 0;
+  text-align: left;
+  /* centers the text inside the list */
+}
+
+ol p {
+  opacity: 0.5;
+}
+
+ol li {
+  margin: 8px 0;           /* optional spacing between items */
+}
+
+
+.section-divider {
+  border: none;
+  height: 1px;
+  background-color: #d3d3d3; /* Light gray */
+  margin: 0;
+  width: 100%;
+}
+
+
+
