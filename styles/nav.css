@@ -1,0 +1,342 @@
+/* ===== HEADER NAVIGATION CSS ===== */
+
+.site-header {
+    height: auto;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    position: relative;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo Section */
+.logo-div {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    min-width: 120px;
+}
+
+.logo-img {
+    height: 70px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.05);
+}
+
+/* Navigation Links */
+.nav-links {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    min-width: 200px;
+}
+
+.nav-links a {
+    font-size: 18px;
+    text-decoration: none;
+    color: #000000;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    padding: 10px 15px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.nav-links a:hover {
+    color: #DE3426;
+    font-weight: 600;
+    background-color: rgba(222, 52, 38, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Demo Button Section */
+.demo-btn-div {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+}
+
+.demo-btn {
+    background: linear-gradient(135deg, #DE3426 0%, #b82a1f 100%);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(222, 52, 38, 0.2);
+}
+
+.demo-btn:hover {
+    background: linear-gradient(135deg, #b82a1f 0%, #DE3426 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(222, 52, 38, 0.3);
+}
+
+/* Mobile Menu Icon */
+.fa-bars {
+    color: #333;
+    cursor: pointer;
+    display: none;
+    transition: color 0.3s ease;
+}
+
+.fa-bars:hover {
+    color: #DE3426;
+}
+
+/* ===== DROPDOWN STYLES ===== */
+.dropdown {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-10px);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 30px;
+    border-radius: 15px;
+    background: linear-gradient(145deg, rgb(203, 53, 53) 0%, rgb(140, 44, 80) 35%, rgb(35, 35, 97) 100%);
+    color: #fff;
+    z-index: 1001;
+    min-width: 300px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dropdown::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    backdrop-filter: blur(12px);
+    border-radius: 15px;
+    z-index: -1;
+}
+
+.dropdown.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+    pointer-events: auto;
+}
+
+.dropdown-item {
+    flex: 1;
+    min-width: 200px;
+}
+
+.dropdown-item img {
+    width: 100%;
+    max-width: 200px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.dropdown-item img:hover {
+    transform: scale(1.05);
+}
+
+.dropdown button {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    margin: 12px 8px;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.dropdown button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.6);
+    transform: translateY(-2px);
+}
+
+.dropdown ol {
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+    margin: 10px 0;
+}
+
+.dropdown ol p {
+    opacity: 0.7;
+    font-size: 0.9em;
+    margin-bottom: 8px;
+}
+
+.dropdown ol li {
+    margin: 8px 0;
+    padding: 4px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.section-divider {
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    margin: 20px 0;
+    width: 100%;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Large Tablet */
+@media (max-width: 1024px) {
+    .site-header {
+        padding: 15px 20px;
+    }
+    
+    .nav-links {
+        gap: 20px;
+    }
+    
+    .nav-links a {
+        font-size: 16px;
+        padding: 8px 12px;
+    }
+    
+    .demo-btn {
+        font-size: 15px;
+        padding: 10px 20px;
+    }
+    
+    .dropdown {
+        min-width: 250px;
+        gap: 20px;
+        padding: 25px;
+    }
+}
+
+/* Tablet - Show mobile menu */
+@media (max-width: 768px) {
+    .site-header {
+        padding: 15px 20px;
+    }
+    
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        gap: 0;
+        padding: 20px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+    
+    .nav-links.mobile-menu-open {
+        display: flex;
+    }
+    
+    .nav-links a {
+        padding: 15px 10px;
+        border-bottom: 1px solid #eee;
+        text-align: center;
+    }
+    
+    .nav-links a:last-child {
+        border-bottom: none;
+    }
+    
+    .fa-bars {
+        display: block;
+    }
+    
+    .demo-btn {
+        font-size: 14px;
+        padding: 10px 18px;
+    }
+    
+    .dropdown {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 90vw;
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .site-header {
+        padding: 12px 15px;
+    }
+    
+    .logo-img {
+        height: 50px;
+    }
+    
+    .demo-btn {
+        font-size: 13px;
+        padding: 8px 15px;
+        border-radius: 20px;
+    }
+    
+    .dropdown {
+        padding: 20px 15px;
+        gap: 15px;
+    }
+    
+    .dropdown-item {
+        min-width: 150px;
+    }
+    
+    .dropdown-item img {
+        max-width: 150px;
+    }
+    
+    .dropdown button {
+        padding: 10px 15px;
+        font-size: 12px;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 320px) {
+    .site-header {
+        padding: 10px 12px;
+    }
+    
+    .logo-img {
+        height: 45px;
+    }
+    
+    .demo-btn {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+    
+    .demo-btn-div {
+        gap: 10px;
+    }
+}
