@@ -1,0 +1,144 @@
+ul.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 20px;
+  transition: gap 0.3s ease;
+  flex-wrap: wrap; /* responsiveness */
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  min-height: 250px;
+}
+
+ul.container li {
+  position: relative;
+  overflow: hidden;
+  flex: 0 1 220px;
+  height: 250px;
+  border-radius: 12px;
+  cursor: pointer;
+  border: 1.2px solid white;
+  box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.4),
+              -2px -5px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease, transform 0.3s ease;
+}
+
+ul.container li img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+ul.container li .content {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  padding: 15px;
+  color: #fff;
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.7) 10%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.6s ease;
+}
+
+ul.container li .content span {
+  position: absolute;
+  left: 50%;
+  bottom: 15px;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 80%;
+  opacity: 0;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+ul.container h3 {
+  font-weight: 600;
+  font-size: clamp(14px, 2vw, 20px);
+  margin-bottom: 5px;
+  color: #fff;
+}
+
+ul.container p {
+  font-size: clamp(12px, 1.5vw, 16px);
+  line-height: 1.4;
+  color: #f1f1f1;
+}
+
+ul.container li:hover {
+  flex: 0 1 300px;
+  height: 280px;
+  transform: scale(1.05);
+  z-index: 10;
+}
+
+ul.container li:hover .content {
+  opacity: 1;
+  visibility: visible;
+}
+
+ul.container li:hover .content span {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-5px);
+}
+
+/* ===================== */
+/* 📱 RESPONSIVE QUERIES */
+/* ===================== */
+
+/* Small devices: stack items neatly */
+@media (max-width: 768px) {
+  ul.container {
+    gap: 12px;
+  }
+
+  ul.container li {
+    flex: 1 1 45%; /* two items per row */
+    min-height: 160px;
+  }
+
+  ul.container li:hover {
+    flex: 1 1 100%; /* expand within row */
+    transform: scale(1.02); /* subtle scale */
+  }
+
+  ul.container h3 {
+    font-size: 14px;
+  }
+
+  ul.container p {
+    font-size: 12px;
+  }
+}
+
+/* Extra small devices (phones < 480px) */
+@media (max-width: 480px) {
+  ul.container {
+    gap: 8px;
+  }
+
+  ul.container li {
+    flex: 1 1 100%; /* one item per row */
+    min-height: 140px;
+  }
+
+  ul.container li:hover {
+    flex: 1 1 100%; /* prevent overflow */
+    transform: none; /* no zoom */
+  }
+
+  ul.container h3 {
+    font-size: 13px;
+  }
+
+  ul.container p {
+    font-size: 11px;
+  }
+}

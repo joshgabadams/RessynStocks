@@ -1,0 +1,162 @@
+
+
+    /* solution-cards */
+
+/* Section and container styles */
+.cards-section {
+    padding: 0 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cards-container {
+    display: grid;
+    gap: 1rem;
+    width: 100%;
+    margin: 0 auto;
+    
+    /* Mobile first - 1 column */
+    grid-template-columns: 1fr;
+    
+    /* Tablet - 2 columns */
+    @media (min-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    /* Desktop - 5 columns */
+    @media (min-width: 1200px) {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 1rem;
+    }
+    
+    /* Large desktop - maintain 4 columns with more space */
+    @media (min-width: 1400px) {
+        gap: 1rem;
+    }
+}
+
+/* Card styles */
+.card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 100%;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    /* Ensure consistent height across cards */
+
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.icon-section {
+    background-color: #fdf2f2;
+    padding: 2rem;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.icon {
+    font-size: 2rem;
+    color: #ef4444;
+}
+
+.content {
+    padding: 2rem;
+    background-color: white;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ef4444;
+    margin: 0 0 20px 0;
+    line-height: 1.2;
+}
+
+.description {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+    color: #64748b;
+    flex-grow: 1;
+}
+
+.link {
+    color: #ef4444;
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.link:hover {
+    color: #dc2626;
+    text-decoration: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+    .cards-section {
+        padding: 20px 16px;
+    }
+    
+    .card {
+        min-height: 280px;
+    }
+    
+    .icon-section {
+        padding: 30px;
+    }
+    
+    .icon {
+        font-size: 40px;
+    }
+    
+    .content {
+        padding: 24px;
+    }
+    
+    .title {
+        font-size: 20px;
+        margin-bottom: 16px;
+    }
+    
+    .description {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+    .cards-section {
+        padding: 32px 24px;
+    }
+    
+    .title {
+        font-size: 22px;
+    }
+    
+    .description {
+        font-size: 15px;
+    }
+}
+
+/* Focus states for accessibility */
+.card:focus-within {
+    outline: 2px solid #ef4444;
+    outline-offset: 4px;
+}
+
+.link:focus {
+    outline: 2px solid #ef4444;
+    outline-offset: 2px;
+    border-radius: 2px;
+}
