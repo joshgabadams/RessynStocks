@@ -1,0 +1,326 @@
+/* ===== BODY AND HERO SECTION CSS ===== */
+
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Lexend', sans-serif;
+    line-height: 1.6;
+    background-color: #fff;
+    color: #333;
+    overflow-x: hidden;
+    justify-content: center;
+}
+
+/* ===== HERO SECTION ===== */
+.hero-section {
+    position: relative;
+    width: 100%;
+    padding: 20px 20px;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: #fff;
+    margin: 0;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.hero-content h1 {
+    font-size: 2em;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: #1a1a1a;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 1.3em;
+    margin-bottom: 40px;
+    color: #555;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-content .demo-btn {
+    background: linear-gradient(135deg, #DE3426 0%, #b82a1f 100%);
+    color: white;
+    border: none;
+    padding: 18px 40px;
+    font-size: 1.1em;
+    font-weight: 600;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 8px 25px rgba(222, 52, 38, 0.3);
+}
+
+.hero-content .demo-btn:hover {
+    background: linear-gradient(135deg, #b82a1f 0%, #DE3426 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(222, 52, 38, 0.4);
+}
+
+/* ===== HERO DOODLES ===== */
+.hero-doodles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    pointer-events: none;
+    overflow: hidden;
+    margin: 0px;
+}
+
+.doodle {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    opacity: 0.15;
+    z-index: 1;
+    transition: all 0.3s ease;
+    animation: float 6s ease-in-out infinite;
+}
+
+/* 🔥 Doodle Pulse (Only Darker & Brighter) */
+.doodle {
+    animation: float 6s ease-in-out infinite,
+               pulseDoodle 4s ease-in-out infinite alternate;
+}
+
+@keyframes pulseDoodle {
+    0% {
+        opacity: 0.15;
+        filter: brightness(0.9);  /* slightly darker */
+    }
+    50% {
+        opacity: 0.35;
+        filter: brightness(1.2);  /* slightly brighter */
+    }
+    100% {
+        opacity: 0.15;
+        filter: brightness(0.9);  /* back to darker */
+    }
+}
+
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Doodle Colors */
+.color1 {
+    background: linear-gradient(135deg, #ECB534, #f4ca4a);
+}
+
+.color2 {
+    background: linear-gradient(135deg, #DE3426, #f04c3c);
+}
+
+/* Doodle Positions */
+.top-left {
+    top: 10%;
+    left: 8%;
+    animation-delay: 0s;
+}
+
+.top-right {
+    top: 15%;
+    right: 10%;
+    animation-delay: 2s;
+}
+
+.bottom-left {
+    bottom: 20%;
+    left: 12%;
+    animation-delay: 4s;
+}
+
+.bottom-right {
+    bottom: 15%;
+    right: 8%;
+    animation-delay: 1s;
+}
+
+/* Corner Curves */
+.curve-bottom-right {
+    border-bottom-right-radius: 50px;
+}
+
+.curve-bottom-left {
+    border-bottom-left-radius: 50px;
+}
+
+.curve-top-right {
+    border-top-right-radius: 50px;
+}
+
+.curve-top-left {
+    border-top-left-radius: 50px;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Large Desktop */
+@media (min-width: 1200px) {
+    .hero-section {
+        padding: 10px 10px;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.5em;
+    }
+    
+    .hero-content p {
+        font-size: 1.4em;
+    }
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .hero-section {
+        padding: 20px 20px;
+        min-height: 500px;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.2em;
+    }
+    
+    .hero-content p {
+        font-size: 1.2em;
+        margin-bottom: 35px;
+    }
+    
+    .hero-content .demo-btn {
+        padding: 16px 35px;
+        font-size: 1em;
+    }
+    
+    .doodle {
+        width: 100px;
+        height: 100px;
+        opacity: 0.12;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .hero-section {
+        padding:0 15px 0 15px;
+        min-height: 450px;
+    }
+    
+    .hero-content {
+        max-width: 100%;
+    }
+    
+    .hero-content h1 {
+        font-size: 2em;
+        margin-bottom: 15px;
+    }
+    
+    .hero-content p {
+        font-size: 1.1em;
+        margin-bottom: 30px;
+        line-height: 1.5;
+    }
+    
+    .hero-content .demo-btn {
+        padding: 14px 30px;
+        font-size: 0.95em;
+    }
+    
+    .doodle {
+        width: 80px;
+        height: 80px;
+        opacity: 0.1;
+    }
+    
+    .top-left, .bottom-left {
+        left: 5%;
+    }
+    
+    .top-right, .bottom-right {
+        right: 5%;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .hero-section {
+        padding: 20px 10px;
+        min-height: 400px;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.em;
+        line-height: 1.1;
+    }
+    
+    .hero-content p {
+        font-size: 1em;
+        margin-bottom: 25px;
+    }
+    
+    .hero-content .demo-btn {
+        padding: 12px 25px;
+        font-size: 0.9em;
+        width: 100%;
+        max-width: 280px;
+    }
+    
+    .doodle {
+        width: 60px;
+        height: 60px;
+        opacity: 0.08;
+    }
+}
+
+/* Very Small Mobile */
+@media (max-width: 320px) {
+    .hero-section {
+        padding: 20px 8px;
+    }
+    
+    .hero-content h1 {
+        font-size: 2em;
+    }
+    
+    .hero-content p {
+        font-size: 0.95em;
+    }
+    
+    .hero-content .demo-btn {
+        padding: 10px 20px;
+        font-size: 0.85em;
+    }
+    
+    .doodle {
+        width: 50px;
+        height: 50px;
+    }
+}
