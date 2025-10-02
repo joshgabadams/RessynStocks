@@ -87,16 +87,40 @@
     box-shadow: 0 8px 25px rgba(222, 52, 38, 0.3);
 }
 
-/* Mobile Menu Icon */
+/* Mobile Menu Icon - Hidden on desktop */
 .fa-bars {
     color: #333;
     cursor: pointer;
-    display: none;
+    display: none !important;
     transition: color 0.3s ease;
 }
 
 .fa-bars:hover {
     color: #DE3426;
+}
+
+/* Login Link */
+.login {
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.login:hover {
+    background-color: rgba(222, 52, 38, 0.1);
+    transform: translateY(-2px);
+}
+
+.login a {
+    color: black;
+    text-decoration: none;
+}
+
+.login a:hover {
+    color: #DE3426;
+    font-weight: 500;
 }
 
 /* ===== DROPDOWN STYLES ===== */
@@ -238,6 +262,7 @@
         padding: 15px 20px;
     }
     
+    /* Hide navigation links by default */
     .nav-links {
         display: none;
         position: absolute;
@@ -252,6 +277,7 @@
         z-index: 1000;
     }
     
+    /* Show navigation when mobile menu is open */
     .nav-links.mobile-menu-open {
         display: flex;
     }
@@ -266,13 +292,18 @@
         border-bottom: none;
     }
     
-    .fa-bars {
-        display: block;
+    /* Hide Sign in and Request a demo button on mobile */
+    .login {
+        display: none;
     }
     
     .demo-btn {
-        font-size: 14px;
-        padding: 10px 18px;
+        display: none;
+    }
+    
+    /* Show hamburger menu icon on mobile only */
+    .fa-bars {
+        display: block !important;
     }
     
     .dropdown {
@@ -294,12 +325,6 @@
     
     .logo-img {
         height: 50px;
-    }
-    
-    .demo-btn {
-        font-size: 13px;
-        padding: 8px 15px;
-        border-radius: 20px;
     }
     
     .dropdown {
@@ -331,39 +356,7 @@
         height: 45px;
     }
     
-    .demo-btn {
-        font-size: 12px;
-        padding: 6px 12px;
-    }
-    
     .demo-btn-div {
         gap: 10px;
     }
-}
-
-
-
-.login{
-    margin: 0;
-    padding: 0;
-    cursor: pointer;
-    padding: 10px;
-    border-radius: 5px;
-}
-
-
-.login:hover{
-    background-color: rgba(222, 52, 38, 0.1);
-    transform: translateY(-2px);
-
-}
-
-.login a {
-    color: black;
-}
-
-.login a:hover{
-        color: #DE3426;
-        font-weight: 500;
-
 }
