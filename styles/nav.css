@@ -360,3 +360,16 @@
         gap: 10px;
     }
 }
+
+
+/* Place this with your nav-links styles, not at the bottom */
+.nav-links a.active {
+    background-color: #DE3426;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* Optional: Disable hover transform on active link */
+.nav-links a.active:hover {
+    transform: none; /* or keep translateY(-2px) if you prefer */
+}
