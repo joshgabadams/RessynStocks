@@ -40,7 +40,6 @@ body {
 }
 
 .hero-content h1 {
-    font-size: 2em;
     font-weight: 800;
     margin-bottom: 20px;
     color: #1a1a1a;
@@ -48,7 +47,6 @@ body {
 }
 
 .hero-content p {
-    font-size: 1.3em;
     margin-bottom: 40px;
     color: #555;
     max-width: 700px;
@@ -189,14 +187,8 @@ body {
     .hero-section {
         padding: 10px 10px;
     }
-    
-    .hero-content h1 {
-        font-size: 2.5em;
-    }
-    
-    .hero-content p {
-        font-size: 1.4em;
-    }
+        
+
 }
 
 /* Tablet */
@@ -206,18 +198,13 @@ body {
         min-height: 500px;
     }
     
-    .hero-content h1 {
-        font-size: 2.2em;
-    }
     
     .hero-content p {
-        font-size: 1.2em;
         margin-bottom: 35px;
     }
     
     .hero-content .demo-btn {
         padding: 16px 35px;
-        font-size: 1em;
     }
     
     .doodle {
@@ -239,12 +226,10 @@ body {
     }
     
     .hero-content h1 {
-        font-size: 2em;
         margin-bottom: 15px;
     }
     
     .hero-content p {
-        font-size: 1.1em;
         margin-bottom: 30px;
         line-height: 1.5;
     }
@@ -277,12 +262,10 @@ body {
     }
     
     .hero-content h1 {
-        font-size: 2.em;
         line-height: 1.1;
     }
     
     .hero-content p {
-        font-size: 1em;
         margin-bottom: 25px;
     }
     
@@ -306,13 +289,6 @@ body {
         padding: 20px 8px;
     }
     
-    .hero-content h1 {
-        font-size: 2em;
-    }
-    
-    .hero-content p {
-        font-size: 0.95em;
-    }
     
     .hero-content .demo-btn {
         padding: 10px 20px;
@@ -323,4 +299,4 @@ body {
         width: 50px;
         height: 50px;
     }
-}
+}    
